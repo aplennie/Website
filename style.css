@@ -5,9 +5,10 @@
     --text-color: #3F3636;
     --bg: #F8F5ED;
     --text-box: #EBE6F4;
-    --text-box-shadow: #C8BFCD;
+    --text-box-shadow: 8px 6px #C8BFCD;
     --accent-1: #FFE8AD;
     --accent-2: #FFDFD8;
+    --accent-3: #d9ffd8;
     --body-font: 'Poppins', sans-serif;
     --heading-font: 'Playfair Display', serif;
     --border-style: 2px solid #3f3636;
@@ -16,12 +17,13 @@
 [data-theme="dark"] {
     --text-color: #F8F5ED;
     --bg: #323747;
-    --text-box: #EBE6F4;
-    --text-box-shadow: #C8BFCD;
-    --accent-1: #FFE8AD;
-    --accent-2: #FFDFD8;
     --border-style: 2px solid #F8F5ED;
 }
+
+@keyframes movement {
+    from { transform: rotate(0deg) translateX(10px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(10px) rotate(-360deg); }
+  }
 
 html, body {
     overflow-x: hidden;
@@ -50,23 +52,34 @@ button {
     font-size: 1.5em;
 }
 
+em {
+    font-weight: bold;
+}
+
 .content-wrapper {
+    position: relative;
+    overflow-x: hidden;
     height: 100%;
     transition: 1s ease-in-out;
 }
 
 .main {
     height: 90%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .art {
     position: absolute;
     top: 25%;
+    left: 20%;
     height: 60%;
-    width: 120%;
+    width: 100%;
     background-image: url('Subtract.svg');
     background-repeat: no-repeat;
     background-position: right 80%;
+    background-size: contain;
+
 }
 
 #bubble-1 {
@@ -78,6 +91,7 @@ button {
     border-radius: 50%;
     background-color: #344058;
     box-shadow: 15px 4px 0px #CFA2A2;
+    animation: movement 10s linear infinite;
 }
 
 #bubble-2 {
@@ -89,6 +103,7 @@ button {
     border-radius: 50%;
     background-color: #776577;
     box-shadow: -5px 4px 0px #CABAC8;
+    animation: movement 7s linear infinite;
 }
 
 .tooltip {
@@ -144,6 +159,15 @@ input:checked + #light-dark::after {
     padding-top: 30%;
 }
 
+.body-text {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20%;}
+
+    .body-text p {
+        display: inline-block;
+    }
+
 .nav {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -162,6 +186,10 @@ input:checked + #light-dark::after {
     padding: 20px 0px;
 }
 
+.nav.top a {
+    align-self: start;
+}
+
 .nav a:hover {
     color: #323747;
 }
@@ -173,4 +201,39 @@ input:checked + #light-dark::after {
 #nav-link-about:hover {
     background-color: var(--accent-1);
 }
+
+#nav-link-home:hover {
+    background-color: var(--accent-3);
+}
+
+
+.caption-box {
+    width: 70%;
+    background-color: var(--text-box);
+    box-shadow: var(--text-box-shadow);
+    color: #3F3636;
+    padding: 20px;
+    margin: 30px 0;
+    font-size: 0.8em;}
+
+    .caption-box p {
+        margin: 0;
+    }
+
+    #fact {
+        float: right;
+    }
+
+    #fact::before {
+        position: absolute;
+        transform: translate(-95%, -95%);
+        content: "!";
+        font-size: 2em;
+        font-weight: 900;
+        color: var(--text-color);
+        padding: 0px 14px;
+        border: var(--border-style);
+        background-color: var(--bg);
+        border-radius: 50%;
+    }
 
