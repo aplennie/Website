@@ -45,7 +45,7 @@ html, body {
 }
 
 p {
-    margin: 10px 0;;
+    margin: 10px 0px;
 }
 
 h1 {
@@ -79,6 +79,10 @@ em {
     font-weight: bold;
 }
 
+iframe {
+    margin: 10px 0px;;
+}
+
 .content-wrapper {
     position: relative;
     overflow-x: hidden;
@@ -98,7 +102,7 @@ em {
     left: 20%;
     height: 60%;
     width: 100%;
-    background-image: url('Subtract.svg');
+    background-image: url('/images/Subtract.svg');
     background-repeat: no-repeat;
     background-position: right 80%;
     background-size: contain;
@@ -146,6 +150,7 @@ em {
     display: block;
     position: fixed;
     overflow: hidden;
+    z-index: 10;
 }
 
 #light-dark {
@@ -187,12 +192,19 @@ input:checked + #light-dark::after {
 
 .body-text {
     width: 80%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding-top: 60px;}
+    padding-top: 60px;
+    padding-bottom: 90px;}
 
     .body-text p {
         display: inline-block;
+    }
+
+    @media (min-width:760px) {
+        .body-text p {
+            max-width: 500px;
+        }
     }
 
 .nav {
@@ -236,14 +248,15 @@ input:checked + #light-dark::after {
 
 
 .caption-box {
-    width: 70%;
+    width: 80%;
     max-width: 400px;
     background-color: var(--text-box);
     box-shadow: var(--text-box-shadow);
     color: #3F3636;
     padding: 20px;
     margin: 30px 0;
-    font-size: 0.8em;}
+    font-size: 0.8em;
+    font-weight: 500;}
 
     .caption-box p {
         margin: 0;
@@ -268,13 +281,14 @@ input:checked + #light-dark::after {
 
 
     .project-preview-grid {
-        margin: 20px 0;
+        margin: 30px 0;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-gap: 40px;
         align-items: stretch;}
         
       .project-preview-grid > .project-preview img {
+        filter: grayscale(0%);
         max-width: 100%;}
         
         .project-preview > .caption-box.small-grid {
@@ -282,5 +296,18 @@ input:checked + #light-dark::after {
             width: fit-content;
             padding: 15px;
             transform: translate(-3px, -36px);
+        }
+
+        .project-preview {
+            position: relative;
+        }
+
+        .project-preview::before {
+            position: absolute;
+            content: "";
+            height: 70%;
+            width: 95%;
+            border: var(--border-style);
+            transform: translate(-5%, -5%);
         }
 
