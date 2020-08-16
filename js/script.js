@@ -39,3 +39,11 @@ window.onmousemove = function (e) {
 };
 
 //http://jsfiddle.net/HJf8q/2/
+
+const backButton = document.getElementsByClassName('back-button')[0];
+
+function goBack() {
+    window.history.back();
+}
+
+backButton.addEventListener('click', goBack);
