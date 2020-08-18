@@ -44,6 +44,7 @@ const backButton = document.getElementsByClassName('back-button')[0];
 
 function goBack() {
     window.history.back();
+    return false;
 }
 
 backButton.addEventListener('click', goBack);
