@@ -246,12 +246,13 @@ input:checked + #light-dark::after {
     }
 
     .body-text .img-block {
-        width: 90%;
+        width: 100%;
         margin: 30px auto auto auto;
     }
 
     .body-text img {
         position: relative;
+        display: flex;
         width: 100%;
         max-width: 700px;
     }
@@ -271,6 +272,12 @@ input:checked + #light-dark::after {
             transform: translate(-2%, -2%);
             z-index: 0;
         }
+
+    @media (max-width:480px) {
+        .body-text {
+            width: 90%;
+        }
+    }
 
 .nav {
     position: fixed;
@@ -347,7 +354,7 @@ input:checked + #light-dark::after {
 
     #img-caption {
         float: right;
-        transform: translate(0, -50px);
+        transform: translate(10px, -20px);
         width: fit-content;
     }
 
