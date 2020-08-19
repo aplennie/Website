@@ -95,6 +95,20 @@ em {
     font-weight: bold;
 }
 
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.caption-box a {
+    color: #3F3636;
+}
+
+a:hover {
+    font-style: italic;
+}
+
 iframe {
     margin: 10px 0px;;
 }
@@ -226,7 +240,7 @@ input:checked + #light-dark::after {
 
 .body-text {
     width: 80%;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     padding-top: 60px;
     padding-bottom: 120px;}
@@ -247,7 +261,7 @@ input:checked + #light-dark::after {
 
     .body-text .img-block {
         width: 100%;
-        margin: 30px auto auto auto;
+        margin: 40px auto;
     }
 
     .body-text img {
