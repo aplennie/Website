@@ -101,6 +101,12 @@ a {
     font-weight: bold;
 }
 
+ol {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+
 .caption-box a {
     color: #3F3636;
 }
