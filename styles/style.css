@@ -86,9 +86,11 @@ h3 {
 
 button {
     border: var(--border-style);
-    padding: 10px 30px;
+    background-color: unset;
+    padding: 8px 30px;
     font-family: var(--body-font);
     font-weight: 500;
+    font-size: 1.1em;
 }
 
 em {
@@ -174,8 +176,8 @@ iframe {
 
     .art > #bubble-1 {
         right: 30%;
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
 
     .art > #bubble-2 {
