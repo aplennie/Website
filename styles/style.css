@@ -27,6 +27,7 @@ html::-webkit-scrollbar {
     --accent-1: #FFE8AD;
     --accent-2: #FFDFD8;
     --accent-3: #d9ffd8;
+    --accent-4: #a0d4fc;
     --body-font: 'Poppins', sans-serif;
     --heading-font: 'Playfair Display', serif;
     --border-style: 2px solid #3f3636;
@@ -176,8 +177,8 @@ iframe {
 
     .art > #bubble-1 {
         right: 30%;
-        width: 180px;
-        height: 180px;
+        width: 160px;
+        height: 160px;
     }
 
     .art > #bubble-2 {
@@ -306,7 +307,7 @@ input:checked + #light-dark::after {
     bottom: 0;
     z-index: 9;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 0.3fr;
     width: 100%;
     height: 10%;
     text-align: center;
@@ -326,7 +327,12 @@ input:checked + #light-dark::after {
 
 .nav a:hover {
     color: #323747;
+    font-style: normal;
 }
+
+.nav a:hover > svg {
+    fill: #323747 !important;
+ }
 
 #nav-link-work:hover {
     background-color: var(--accent-2);
@@ -338,6 +344,16 @@ input:checked + #light-dark::after {
 
 #nav-link-home:hover {
     background-color: var(--accent-3);
+}
+
+#nav-link-resume:hover {
+    background-color: var(--accent-4);
+}
+
+#nav-link-resume svg {
+    max-height: 1.3em;
+    fill: var(--text-color) !important;
+    vertical-align: middle;
 }
 
 
